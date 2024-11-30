@@ -23,6 +23,7 @@ const GuGuDan = () => {
 
     input?.focus();
   };
+
   return (
     <form onSubmit={onSubmitForm}>
       <div>

@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { list } from '../../utils/list';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Side = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const handleKeyDown = (event: any) => {
+    if (event.key === '1') {
+      navigate('/Gugudan');
+    }
+
+    if (event.key === '2') {
+      navigate('/Wordrelay');
+    }
+
+    if (event.key === '3') {
+      navigate('/Numberbaseball');
+    }
+
+    if (event.key === '4') {
+      navigate('/ResponseCheck');
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
     <SidebarContainer>
